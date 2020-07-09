@@ -18,10 +18,12 @@ export default class Today extends React.Component{
             desc: "N/A",
             city: "",
             code: -1, /* weather condition code for OWM */
-            posts: []
+            posts: [],
+            hasMore: true
         }
         this.handleformQuery = this.handleformQuery.bind(this);
         this.handlePost = this.handlePost.bind(this);
+        this.listMorePosts = this.listMorePosts.bind(this);
     }
 
     render() {
@@ -31,7 +33,7 @@ export default class Today extends React.Component{
                 <WeatherDisplay city={this.state.city} unit={this.props.unit} weatherGroup={this.state.weatherGroup} temp={this.state.temp} desc={this.state.desc} code={this.state.code}/>
                 <WeatherForm city={this.state.city} unit={this.props.unit} onQuery={this.handleformQuery}/>
                 <PostForm onPost={this.handlePost}/>
-                <PostList posts={this.state.posts}/>
+                <PostList posts={this.state.posts} listMorePosts={this.listMorePosts} hasMore={this.state.hasMore}/>
             </div>
         );
     }
@@ -98,12 +100,29 @@ export default class Today extends React.Component{
         ).then(
             (_posts) => {
                 this.setState({
-                    posts: _posts
+                    posts: _posts,
+                    hasMore: true
                 });
             }
         ).catch(
             (err) => {
                 console.error('Error creating posts', err);
+            }
+        );
+    }
+
+    listMorePosts() {
+        if(this.state.posts.length < 1) return;
+        listPosts(this.state.posts[this.state.posts.length - 1].id).then(
+            (_posts) => {
+                this.setState({
+                    posts: [...this.state.posts, ..._posts], /* Append posts list */
+                    hasMore: _posts.length > 0 /* When _post === [], set hasMore to false */
+                });
+            }
+        ).catch(
+            (err) => {
+                console.error('Error Listing More Posts', err);
             }
         );
     }

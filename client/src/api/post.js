@@ -9,8 +9,9 @@ const postBaseUrl = "http://localhost:3000/api";
 /* Staging Server URL */
 // const postBaseUrl = "http://localhost:8088/api";
 
-export function listPosts() {
+export function listPosts(start) {
     let url = `${postBaseUrl}/posts`;
+    if(start) url = url + `?start=${start}`;
     console.log(`Making GET Request to ${url}`);
     return axios.get(url).then(
         (res) => {

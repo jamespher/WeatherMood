@@ -3,13 +3,15 @@ if(!global.db) {
     db = pgp(process.env.DB_URL);
 }
 
-function listPosts() {
+function listPosts(start) {
      const sql = `
         SELECT * FROM posts
+        ${(start) ? 'WHERE id < $<start>' : ''}
         ORDER BY id DESC
+        LIMIT 10
      `;
      /* db.any() always return an array even if the array is empty */
-     return db.any(sql);
+     return db.any(sql, {start});
 }
 
 function createPost(mood, text) {

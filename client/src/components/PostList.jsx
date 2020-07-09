@@ -1,6 +1,7 @@
 import React from 'react';
 
 import { ListGroup, ListGroupItem } from 'reactstrap';
+import InfiniteScroll from 'react-infinite-scroller';
 import PostItem from 'components/PostItem.jsx';
 import './PostList.css';
 
@@ -28,7 +29,9 @@ export default class PostList extends React.Component {
         return (
             <div className="post-list container mt-4">
                 <ListGroup>
-                    {content}
+                    <InfiniteScroll initialLoad={false} loadMore={this.props.listMorePosts} hasMore={this.props.hasMore}>
+                        {content}
+                    </InfiniteScroll>
                 </ListGroup>
             </div>
         );

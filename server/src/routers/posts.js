@@ -7,7 +7,8 @@ router.use(bodyParser.json());
 
 /* LIST POSTS */
 router.get('/posts',  function(req, res, next) {
-    postModel.listPosts().then(
+    const {start} = req.query;
+    postModel.listPosts(start).then(
         (posts) => {
             res.json(posts);
         }

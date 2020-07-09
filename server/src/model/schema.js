@@ -31,8 +31,8 @@ const datasql = `
     SELECT 
         'Sad', 
         'Hello' || i || 'Hello' || (i+1) || 'Hello' || (i+2),
-        round(extract(epoch from now()) + (i - 20) * 3600)
-    FROM generate_series(1, 20) AS s(i);
+        round(extract(epoch from now()) + (i - 1000) * 3600.0)
+    FROM generate_series(1, 1000) AS s(i);
     CREATE INDEX posts_idx_ts ON posts USING btree(ts);
 `;
 
