@@ -1,0 +1,9 @@
+.post-list .empty {
+    border-color: rgba(255, 255, 255, 0);
+    background: rgba(255,255,255,0);
+    margin: 0 auto;
+}
+.post-list .empty-post {
+    text-align: center;
+
+}

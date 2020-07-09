@@ -1,0 +1,27 @@
+.weather-bg {
+    height: 100%;
+    background-position: center;
+    background-attachment: fixed;
+    background-size: cover;
+}
+.weather-bg.storm {
+    background-image: url("images/w-storm-bg.jpg");
+}
+.weather-bg.drizzle {
+    background-image: url("images/w-drizzle-bg.jpg");
+}
+.weather-bg.rain  {
+    background-image: url("images/w-rain-bg.jpg");
+}
+.weather-bg.na  {
+    background-image: url("images/w-na-bg.jpg");
+}
+.weather-bg.atmosphere  {
+    background-image: url("images/w-atmosphere-bg.jpg");
+}
+.weather-bg.clear  {
+    background-image: url("images/w-clear-bg.jpg");
+}
+.weather-bg.clouds  {
+    background-image: url("images/w-clouds-bg.jpg");
+}

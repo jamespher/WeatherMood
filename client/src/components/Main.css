@@ -1,0 +1,19 @@
+html, body, #root{
+    height: 100%;
+}
+
+.main {
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+}
+
+.container {
+    font-size: 1rem;
+}
+
+.main .footer {
+    text-align: center;
+    color: rgba(255, 255, 255, 0.7);
+    padding: 6rem 2rem 2rem 2rem;
+}

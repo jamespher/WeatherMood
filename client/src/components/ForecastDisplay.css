@@ -1,0 +1,22 @@
+.forecast-display {
+    width: 60%;
+}
+.forecast-display img {
+    display: block;
+    width: 100%;
+    max-width: 30rem;
+    margin: 0 auto;
+}
+.forecast-display .temperature {
+    text-transform: capitalize;
+    font-size: 5rem;
+}
+
+.forecast-display .description {
+    text-transform: capitalize;
+    font-size: 1.5rem;
+}
+
+.fivedays-forecast {
+    font-size: 1.5rem;
+}
