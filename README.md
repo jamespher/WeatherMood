@@ -1,4 +1,4 @@
-# Weathermood (ReactJS + ExpressJS + PostgreSQl)
+# Weathermood (ReactJS + ExpressJS + PostgreSQL)
 
 After clone the project to local
 - Please npm install first to get all the package that project may used.
