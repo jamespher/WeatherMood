@@ -4,10 +4,10 @@ import axios from 'axios';
 // import 'babel-polyfill';
 
 /* Develop Server URL */
-const postBaseUrl = "http://localhost:3000/api";
+//const postBaseUrl = "http://localhost:3000/api";
 
-/* Staging Server URL */
-// const postBaseUrl = "http://localhost:8088/api";
+/* Production Server URL */
+const postBaseUrl = "http://weathermood-menghswu.us-east-1.elasticbeanstalk.com/api";
 
 export function listPosts(start) {
     let url = `${postBaseUrl}/posts`;

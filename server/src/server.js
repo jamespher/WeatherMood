@@ -10,7 +10,7 @@ app.use(express.static('dist', {
         res.set('Cache-Control', 'public, s-maxage=86400');
     }
 }));
-
+/*
 let allowCrossDomain = function(req, res, next) {
     res.header('Access-Control-Allow-Origin', '*');
     res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,OPTIONS');
@@ -18,11 +18,11 @@ let allowCrossDomain = function(req, res, next) {
     next();
 }
 app.use(allowCrossDomain);
-
+*/
 app.use('/api', postRouter);
 app.use(errorhandler);
 
-const port = 3000;
+const port = 8080; /* Nginx port */
 
 app.listen(port, () => {
     console.log(`Server is up and running on port ${port}...`);

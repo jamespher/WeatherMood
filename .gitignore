@@ -7,4 +7,5 @@ sever/*.dump
 client/node_modules/*
 client/dist/index.bundle.js*
 client/dist/vendor.bundle/js*
+client/dist/main.bundle.js*
 
